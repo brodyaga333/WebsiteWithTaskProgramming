@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodejsConsoleApp1", "NodejsConsoleApp1\NodejsConsoleApp1.njsproj", "{E3B75902-9CC2-475E-B3B7-F23C8154EAAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{8BB075CC-BF5D-4FFC-B104-D38ADE8FDC60}"
+	ProjectSection(SolutionItems) = preProject
+		.env = .env
+		.gitignore = .gitignore
+		problems.js = problems.js
+		server.js = server.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "models", "models", "{C2AEE9AA-9E19-4142-B24B-01122739928A}"
+	ProjectSection(SolutionItems) = preProject
+		models\index.js = models\index.js
+		models\Problem.js = models\Problem.js
+		models\User.js = models\User.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{BEBF6DED-FDCB-40D4-A0BC-7D009D6FE640}"
+	ProjectSection(SolutionItems) = preProject
+		config\config.js = config\config.js
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{F3460399-1FFF-441E-A8D5-45DF9B7D7450}"
+	ProjectSection(SolutionItems) = preProject
+		index.html = index.html
+		script.js = script.js
+		public\style.css = public\style.css
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E3B75902-9CC2-475E-B3B7-F23C8154EAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3B75902-9CC2-475E-B3B7-F23C8154EAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3B75902-9CC2-475E-B3B7-F23C8154EAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3B75902-9CC2-475E-B3B7-F23C8154EAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C2AEE9AA-9E19-4142-B24B-01122739928A} = {8BB075CC-BF5D-4FFC-B104-D38ADE8FDC60}
+		{BEBF6DED-FDCB-40D4-A0BC-7D009D6FE640} = {8BB075CC-BF5D-4FFC-B104-D38ADE8FDC60}
+		{F3460399-1FFF-441E-A8D5-45DF9B7D7450} = {8BB075CC-BF5D-4FFC-B104-D38ADE8FDC60}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE83BDA7-FE13-40EA-9351-A4BEC52AFF8D}
+	EndGlobalSection
+EndGlobal
