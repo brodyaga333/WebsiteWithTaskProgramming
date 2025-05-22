@@ -27,8 +27,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "config", "config", "{BEBF6D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "public", "public", "{F3460399-1FFF-441E-A8D5-45DF9B7D7450}"
 	ProjectSection(SolutionItems) = preProject
-		index.html = index.html
-		script.js = script.js
+		public\index.html = public\index.html
+		public\script.js = public\script.js
 		public\style.css = public\style.css
 	EndProjectSection
 EndProject

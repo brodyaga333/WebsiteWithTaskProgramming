@@ -33,6 +33,7 @@
   <ItemGroup>
     <Content Include="20250520172649-create-users.js" />
     <Content Include="20250520172737-create-problems.js" />
+    <Content Include="20250521151533-add-difficulty-to-problems.js" />
     <Content Include="app.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />

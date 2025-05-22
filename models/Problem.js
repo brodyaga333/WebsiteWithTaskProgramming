@@ -10,6 +10,11 @@ module.exports = (sequelize, DataTypes) => {
         description: { type: DataTypes.TEXT, allowNull: false },
         templateCode: DataTypes.TEXT,
         testCases: DataTypes.JSONB,
+        difficulty: {
+            type: DataTypes.ENUM('beginner', 'intermediate', 'expert'),
+            allowNull: false,
+            defaultValue: 'beginner'
+        },
         createdByAI: { type: DataTypes.BOOLEAN, defaultValue: false }
     }, {
         sequelize,
