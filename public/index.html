@@ -1,24 +1,21 @@
-﻿<!-- index.html -->
-<!DOCTYPE html>
-<html lang="ru">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Программирование - Задачи</title>
+    <title>Coding Platform</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="sidebar">
-        <div class="menu-header">Задания по программированию</div>
+        <div class="menu-header">Задачи по программированию</div>
         <div class="menu-item" onclick="loadTasks('beginner')">Начинающий</div>
         <div class="menu-item" onclick="loadTasks('intermediate')">Продвинутый</div>
         <div class="menu-item" onclick="loadTasks('expert')">Мастер</div>
     </div>
 
-    <div class="content" id="content">
-        <div class="tasks-container" id="tasks-container">
-            <!-- Задачи будут загружаться сюда -->
-        </div>
+    <div class="content">
+        <div class="tasks-container" id="tasks-container"></div>
     </div>
 
     <script src="script.js"></script>

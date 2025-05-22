@@ -2,50 +2,41 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
-const { sequelize, Problem } = require('./models');
+const { sequelize, Problem } = require('./models');  // Импорт модели Problem
 
 async function start() {
     try {
         await sequelize.authenticate();
         console.log('✅ PostgreSQL connected');
 
-        // Автоматическое создание таблиц (только для разработки!)
-        await sequelize.sync({ alter: true });
+        // НЕ делаем force: true, чтобы не стирать данные при каждом старте
+        await sequelize.sync(); // просто синхронизация без удаления данных
 
         const app = express();
         app.use(cors());
         app.use(express.json());
 
-        app.use((req, res, next) => {
-            res.setHeader('Content-Type', 'application/json; charset=utf-8');
-            next();
+        // Маршрут /api/problems
+        app.get('/api/problems', async (req, res) => {
+            try {
+                // Получаем уровень сложности из query, по умолчанию 'beginner'
+                const difficulty = (req.query.difficulty || 'beginner').toLowerCase().trim();
+
+                // Получаем задачи из базы по difficulty
+                const problems = await Problem.findAll({
+                    where: { difficulty }
+                });
+
+                console.log(`Задачи difficulty=${difficulty}: ${problems.length}`);
+
+                res.json(problems);
+            } catch (err) {
+                console.error(err);
+                res.status(500).json({ error: 'Ошибка сервера при получении задач' });
+            }
         });
 
         app.use(express.static(path.join(__dirname, 'public')));
-
-        // Роут для фильтрации задач
-        app.get('/api/problems', async (req, res) => {
-            try {
-                const whereClause = req.query.difficulty
-                    ? { where: { difficulty: req.query.difficulty } }
-                    : {};
-
-                const problems = await Problem.findAll(whereClause);
-                res.json(problems);
-            } catch (err) {
-                res.status(500).json({ error: 'Ошибка получения задач' });
-            }
-        });
-
-        // Добавление задачи (опционально)
-        app.post('/api/problems', async (req, res) => {
-            try {
-                const problem = await Problem.create(req.body);
-                res.status(201).json(problem);
-            } catch (err) {
-                res.status(500).json({ error: 'Ошибка создания задачи' });
-            }
-        });
 
         const PORT = process.env.PORT || 4000;
         app.listen(PORT, () => console.log(`🚀 Server: http://localhost:${PORT}`));

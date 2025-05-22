@@ -1,5 +1,3 @@
-// JavaScript source code
-// models/problem.js
 'use strict';
 const { Model } = require('sequelize');
 

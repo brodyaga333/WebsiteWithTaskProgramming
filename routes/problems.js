@@ -1,15 +1,14 @@
-const express = require('express');
+п»їconst express = require('express');
 const router = express.Router();
 const { Problem } = require('../models');
 
-// GET /api/problems
 router.get('/', async (req, res) => {
     try {
         const problems = await Problem.findAll();
         res.json(problems);
     } catch (error) {
-        console.error('Ошибка при получении задач:', error);
-        res.status(500).json({ error: 'Ошибка сервера' });
+        console.error('РћС€РёР±РєР° РїСЂРё РїРѕР»СѓС‡РµРЅРёРё Р·Р°РґР°С‡:', error);
+        res.status(500).json({ error: 'РћС€РёР±РєР° СЃРµСЂРІРµСЂР°' });
     }
 });
 
